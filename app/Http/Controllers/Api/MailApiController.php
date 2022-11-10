@@ -14,7 +14,7 @@ class MailApiController extends Controller
 {
     public function confirmation(StoreMailApiRequest $request)
     {
-        if (!empty($request->email)) {
+        if (!empty($request->all())) {
             $token = Str::random(64);
             $data = $request->except(['tranid', 'formid', 'consent-personal-data']);
             $new_data = array_merge($data, ['token' => $token]);
@@ -45,3 +45,7 @@ class MailApiController extends Controller
         return redirect('http://xn--80acbojebux9agf4k.xn--p1ai');
     }
 }
+
+/*На Ваш почтовый ящик отправлено сообщение,
+содержащее ссылку для подтверждения правильности e-mail адреса.
+Пожалуйста, перейдите по ссылке для завершения подачи данных.*/
