@@ -42,7 +42,7 @@ class MailApiController extends Controller
                 $message = "Your e-mail is already verified";
             }
         }
-        return redirect('http://xn--80acbojebux9agf4k.xn--p1ai');
+        return redirect('https://xn--80acbojebux9agf4k.xn--p1ai');
     }
 }
 
