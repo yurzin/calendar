@@ -14,7 +14,7 @@ class MailApiController extends Controller
 {
     public function confirmation(StoreMailApiRequest $request)
     {
-        if (!empty($request->all())) {
+        if (!empty($request->email)) {
             $token = Str::random(64);
             $data = $request->except(['tranid', 'formid', 'consent-personal-data']);
             $new_data = array_merge($data, ['token' => $token]);
